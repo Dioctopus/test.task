@@ -1,0 +1,139 @@
+@import "vars";
+@import "compass/css3";
+@import "compass/typography";
+
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@import url(http://weloveiconfonts.com/api/?family=brandico|entypo);
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  padding-right: 10px;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 100%;
+  height: 100%;
+  background-color: #7BC087;
+}
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+ul {list-style:none;}
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  width: 70%;
+  padding-top: 5%;
+  height: 100%;
+  margin: 0 auto;
+
+  color: #fff;
+}
+
+
+.content {
+  @include clearfix;
+  background: $gray;
+   font-size: 1.2em;
+   width: 100%;
+   position: relative;
+   height: 100%;
+   @include single-box-shadow(5px, 5px, 15px, -4px, $gray);
+
+  .contact {
+    float: left;
+    width: 30%;
+    background: darken($gray, 10);
+    height: 100%;
+    padding: 15px;
+    min-height: 465px;
+    @media all and (max-width: 780px) {
+      width: 100%;
+    }
+
+    & h2 {
+      text-align: center;
+      margin: 0px 0px 20px;
+      font-size: 1em;
+    }
+      .social {
+         display: table;
+         width: 100%;
+      .social-button {
+        display: table-cell;
+      text-align: center;
+      }
+      span {
+         margin-bottom: 10px;
+         text-transform: uppercase;
+       }
+       a {
+         &:hover {color: $accent;}
+       }
+       }
+       form {
+         border-top: solid thin $ltgray;
+         border-bottom: solid thin $ltgray;
+         margin: 20px 0;
+         padding: 20px 0;
+         input,
+         textarea {
+           background: $dkgray;
+           padding: 8px;
+           margin-bottom: 8px;
+           width: 100%;
+           color: white;
+           &:last-of-type {margin-bottom: 0;}
+           &[type='submit'] {
+             text-transform: uppercase;
+             background: $contact-form;
+             width: 100%;
+             color: white;
+             margin-top: 5px;
+             &:hover {
+               background: darken($contact-form, 10%);
+               @include box-shadow;
+             }
+           }
+           &[type='textarea'] {
+             min-height:75px;
+             vertical-align: text-top;
+           }
+         }
+       }//endofform
+       .contact-info {
+         font-size: 0.8em;
+         width: 100%;
+         margin-bottom: 5px;
+         text-transform: lowercase;
+         font-weight: 100;
+         span {
+           width: 100%;
+           display: block;
+           margin: 0 0 10px;
+         }
+         &,
+         a:hover {
+           color: $accent;
+         }
+       }
+     }
+ .map {
+   width: 70%;
+   height: 100%;
+   float: right;
+   #map {
+     height: 464px;
+     position: relative;
+     width: calc(100%);
+   }
+ }
+}
