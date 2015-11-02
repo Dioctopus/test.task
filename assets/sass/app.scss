@@ -89,6 +89,7 @@ a {
            background: $dkgray;
            padding: 8px;
            margin-bottom: 8px;
+           resize: none;
            width: 100%;
            color: white;
            &:last-of-type {margin-bottom: 0;}
